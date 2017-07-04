@@ -11,9 +11,11 @@ var obj = {
 
 var gulp = require("gulp");
 var babel = require('gulp-babel');
+var uglify = require("gulp-uglify");
 gulp.task("jstask",function(){
 	gulp.src("js/bullet.js")
 	.pipe(babel({presets: ['es2015']}))
+	.pipe(uglify())
 	.pipe(gulp.dest("destjs"));
 });
 //gulp.task('default',['jstask']); 
